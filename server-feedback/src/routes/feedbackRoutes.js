@@ -4,8 +4,8 @@ const router = express.Router();
 const feedbackController = require("../controllers/feedbackController");
 
 router.post("/submit", (req, res) => {
-  const { feedback } = req.body;
-  const newFeedback = feedbackController.submitFeedback(feedback);
+  const { name, feedback } = req.body;
+  const newFeedback = feedbackController.submitFeedback(name, feedback);
   res.json(newFeedback);
 });
 

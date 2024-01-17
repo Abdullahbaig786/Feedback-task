@@ -1,10 +1,9 @@
-// src/controllers/feedbackController.js
 const Feedback = require("../models/feedbackModel");
 
 const feedbackList = [];
 
-const submitFeedback = (feedback) => {
-  const newFeedback = new Feedback(Date.now(), feedback);
+const submitFeedback = (name, feedback) => {
+  const newFeedback = new Feedback(Date.now(), name, feedback);
   feedbackList.push(newFeedback);
   return newFeedback;
 };

@@ -3,6 +3,7 @@ class Feedback {
   constructor(id, feedback) {
     this.id = id;
     this.feedback = feedback;
+    this.name = name;
   }
 }
 
