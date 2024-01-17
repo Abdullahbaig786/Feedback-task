@@ -1,5 +1,3 @@
-// App.js
-
 import React, { useState } from "react";
 import FeedbackForm from "./components/FeedbackForm";
 import ThankYouMessage from "./components/Message";
@@ -8,14 +6,14 @@ import "../src/styles/tailwind.css";
 const App = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (feedback) => {
+  const handleSubmit = async (userName, feedback) => {
     try {
       const response = await fetch("http://localhost:3001/feedback/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ feedback }),
+        body: JSON.stringify({ name: userName, feedback }),
       });
 
       if (response.ok) {

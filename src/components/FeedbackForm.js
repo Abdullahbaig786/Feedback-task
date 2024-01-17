@@ -1,15 +1,12 @@
-// FeedbackForm.js
-
 import React, { useState } from "react";
 
 const FeedbackForm = ({ onSubmit }) => {
-  const [name, setName] = useState("");
+  const [userName, setName] = useState("");
   const [feedback, setFeedback] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Assuming onSubmit takes an object with name and feedback properties
-    onSubmit({ name, feedback });
+    onSubmit({ userName, feedback });
   };
 
   return (
@@ -27,7 +24,7 @@ const FeedbackForm = ({ onSubmit }) => {
           id="name"
           type="text"
           placeholder="Enter your name"
-          value={name}
+          value={userName}
           onChange={(e) => setName(e.target.value)}
         />
       </div>
